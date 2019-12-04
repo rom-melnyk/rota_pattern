@@ -14,5 +14,5 @@ See [docs](./docs/README.md).
 
 ## Contributors
 
-MethewsMuller <https://github.com/MethewsMuller>
+MethewsMuller <https://github.com/MethewsMuller>  
 Roman Melnyk <https://github.com/rom-melnyk>
