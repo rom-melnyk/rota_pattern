@@ -1,0 +1,33 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++-8 build and run",
+            "command": "/usr/local/bin/g++-8 -o ${workspaceFolder}/build/rota_pattern.out ${workspaceFolder}/src/rota_pattern.cpp && ${workspaceFolder}/build/rota_pattern.out",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "g++-8 build active file",
+            "command": "/usr/local/bin/g++-8",
+            "args": [
+                "-o",
+                "${workspaceFolder}/build/rota_pattern.out",
+                "${workspaceFolder}/src/rota_pattern.cpp",
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ]
+}
