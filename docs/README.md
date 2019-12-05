@@ -35,7 +35,7 @@ The program should be split into multiple small files (one file for one piece of
 
 ## Compilation
 
-The source code resides in `src/`. The entry point is `src/rota_pattern.cpp`. That file should be fed to compiler. Compiler should yield results into `build/`. Mind that output files are `.gitignore`-d.
+The source code resides in `src/`. The entry point is `src/rota_pattern.cpp`. That file should be fed to compiler. Compiler should yield results into `build/`. There are VSCode tasks added for compilation under Mac/g++. Mind that output files are `.gitignore`-d.
 
 [To the top](#index)
 
