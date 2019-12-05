@@ -10,11 +10,16 @@
 
 **The result** of this task should be a class instantiated with CLI arguments (received as parameters of `int main(...)`). The class should have public fields containing values of `dout`, `din`, `pen`, etc.
 
-## [ ] Write TGA file of given dimesion (`dout + 20` x `dout + 20`). See [README](./README.md#tga-format).
+## [ ] Write TGA file.
+
+   - See [README](./README.md#tga-format).
+   - Image dimesion should be provided (`dout + 20` x `dout + 20`).
 
 **The result** should be a class. It should have method for writing the file of given name with given payload.
 
-## [ ] Create Pixel class. It shoud contain color information.
+## [ ] Create Pixel class.
+
+   - It shoud contain color information (R, G, and B data).
 
 ## [ ] Create image payload (canvas) as array/vector of pixel elements.
 
