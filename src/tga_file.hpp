@@ -6,10 +6,13 @@
 #include <string>
 #include <vector>
 
+#include "interfaces.hpp"
+
 class TgaFile {
 public:
   TgaFile(unsigned short _side, std::string _filename);
   void write(std::vector<char>  payload);
+  std::vector<char> create_canvas(std::vector<Position> pattern);
 
 private:
   unsigned short side;
@@ -45,6 +48,28 @@ TgaFile::TgaFile(unsigned short _side, std::string _filename) {
   header[15] = side_hi;
 }
 
+std::vector<char> TgaFile::create_canvas(std::vector<Position> pattern) {
+  std::vector<char> canvas;
+
+  // Fill canvas with white
+  for (unsigned short y = 0; y < side; ++y) {
+    for (unsigned short x = 0; x < side; ++x) {
+      canvas.push_back((char) 0xFF); // B
+      canvas.push_back((char) 0xFF); // G
+      canvas.push_back((char) 0xFF); // R
+    }
+  }
+
+  for (int i = 0; i < pattern.size(); ++i) {
+    int pos = 3 * (pattern[i].y * side + pattern[i].x);
+    canvas[pos] = (char) 0x36; // B
+    canvas[pos + 1] = (char) 0x56; // G
+    canvas[pos + 2] = (char) 0x26; // R
+  }
+
+  return canvas;
+}
+
 void TgaFile::write(std::vector<char> payload) {
   std::ofstream file;
   file.open(filename, std::ios::out | std::ios::binary);
@@ -53,12 +78,8 @@ void TgaFile::write(std::vector<char> payload) {
     file.put(header[i]);
   }
 
-  for (unsigned short y = 0; y < side; ++y) {
-    for (unsigned short x = 0; x < side; ++x) {
-      file.put((char) x); // B
-      file.put((char) y); // G
-      file.put((char) x); // R
-    }
+  for (int i = 0; i < payload.size(); ++i) {
+    file.put(payload[i]);
   }
   file.close();
 }
