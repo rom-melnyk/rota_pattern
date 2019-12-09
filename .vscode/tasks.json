@@ -17,6 +17,15 @@
         },
         {
             "type": "shell",
+            "label": "g++-8 build for debug",
+            "command": "/usr/local/bin/g++-8 -o ${workspaceFolder}/build/rota_pattern.out --debug ${workspaceFolder}/src/rota_pattern.cpp",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
             "label": "g++-8 build active file",
             "command": "/usr/local/bin/g++-8",
             "args": [
