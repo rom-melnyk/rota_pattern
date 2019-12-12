@@ -1,6 +1,9 @@
 #include <iostream>
 
 int main() {
-  std::cout << "Rotation pattern v1.0.0\n";
+
+  std::cout << "hello";
+
+
   return 0;
 }
