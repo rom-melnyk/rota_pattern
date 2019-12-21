@@ -3,3 +3,8 @@
 *.tga
 !examples/*.tga
 .vs/
+CppProperties.json
+Debug/
+*.sln
+*.vcxproj*
+
