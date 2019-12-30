@@ -1,6 +1,6 @@
 # Task distribution
 
-## [ ] Parse CLI arguments (see [README](./README.md#cli) for more info).  
+## [x] Parse CLI arguments (see [README](./README.md#cli) for more info).  
 
    - The CLI arguments of format `--dout=800` should be parsed into 2 parts (before `=` and after it).
    - Those arguments should set up appropriate constants which affect whole application: they define image size and pattern parameters.
