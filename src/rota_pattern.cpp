@@ -3,8 +3,6 @@
 
 using namespace std;
 
-
-
 int main(int count, char* argum[]) {
 
 	for (int i = 1; i < count; i++)

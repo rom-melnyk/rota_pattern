@@ -1,7 +1,8 @@
 #ifndef __CLI_ARGUMENTS_H_INCLUDED__
 #define __CLI_ARGUMENTS_H_INCLUDED__
 
-#include<iostream>
+#include <iostream>
+#include <cstring>
 
 using namespace std;
 class CLIarguments {
@@ -61,7 +62,7 @@ public:
 			SetPenValue(newNumber);
 
 		delete[] numberPart;
-		delete[]namePart;
+		delete[] namePart;
 		delete[] tmpArgument;
 	}
 	void Show() {
