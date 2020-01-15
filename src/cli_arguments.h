@@ -5,6 +5,7 @@
 #include <cstring>
 
 using namespace std;
+
 class CLIarguments {
 
 	int dout;
