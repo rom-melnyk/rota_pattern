@@ -34,6 +34,8 @@ public:
 		int tmpSize = 0, numberPartIndex= 0, namePartIndex = 0;  //iterators or counters
 
 
+
+
 		for (int i = 0; i < size; i++) {
 			if (arg[i] != '-' && arg[i] != '=') {
 				tmpArgument[tmpSize] = arg[i];
