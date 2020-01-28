@@ -28,6 +28,7 @@ public:
 		this->pen = 0;
 	}
 	// --dout=120
+
 	void Parse(char *arg) {
 		int size = strlen(arg)+1;
 		char *tmpArgument = new char[size];

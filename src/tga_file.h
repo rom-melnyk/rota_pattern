@@ -26,13 +26,13 @@ public:
 		0                   //17     Image descriptor
 	};
 	struct rgb {
-		byte red, green, blue;
+		byte red = 255, green = 255, blue = 255;
 	};
 	void writeTargaFile(const char* fileName, int height, int width) {
 
 		ofstream file;
-		rgb* data = new rgb;
-
+		
+		rgb data;
 		file.open(fileName, ios::binary|ios::out);
 
 		if (!file.is_open()) throw;
@@ -48,13 +48,13 @@ public:
 
 		for (int y = 0; y < height; y++) 
 			for (int x = 0; x < width; x++) {
-				file.put((byte)data[x].blue);
-				file.put((byte)data[y].green);
-				file.put((byte)data[x].red);
+				file.put(data.blue);
+				file.put(data.green);
+				file.put(data.red);
 			
 			}
 		file.close();
-		delete[] data;
+		
 	 }
 
 };
