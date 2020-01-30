@@ -5,6 +5,7 @@
 #include <cstring>
 
 using namespace std;
+
 class CLIarguments {
 
 	int dout;
@@ -27,10 +28,13 @@ public:
 		this->pen = 0;
 	}
 	// --dout=120
+
 	void Parse(char *arg) {
 		int size = strlen(arg)+1;
 		char *tmpArgument = new char[size];
 		int tmpSize = 0, numberPartIndex= 0, namePartIndex = 0;  //iterators or counters
+
+
 
 
 		for (int i = 0; i < size; i++) {
