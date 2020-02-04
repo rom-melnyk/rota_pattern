@@ -1,7 +1,8 @@
 #include <iostream>
+
 #include "cli_arguments.h"
 #include "tga_file.h"
-
+#include "Canvas.h"
 
 using namespace std;
 
@@ -21,8 +22,10 @@ int main(int count, char* argum[]) {
 	
 	Arguments.Show();
 
-	WriteTGA file;
-	file.writeTargaFile("tgafile.tga", Arguments.GetDoutValue() + 20,Arguments.GetDoutValue()+20);
+    WriteTGA file(Arguments.GetDoutValue() + 20, Arguments.GetDoutValue() + 20);
+	file.writeTargaFile("tgafile.tga");
+
+	
 
   return 0;
 }
