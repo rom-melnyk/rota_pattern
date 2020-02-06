@@ -1,0 +1,5 @@
+﻿  rota_pattern.cpp
+c:\users\user\source\repos\rota_pattern\src\canvas.h(32): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\source\repos\rota_pattern\src\canvas.h(33): warning C4018: '<': signed/unsigned mismatch
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification
+  rota_pattern.vcxproj -> C:\Users\User\source\repos\rota_pattern\Release\rota_pattern.exe
