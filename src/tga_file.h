@@ -30,13 +30,14 @@ public:
 	   24,                 //16     Means 24bit RGB
 	   0                   //17     Image descriptor
 	};
-	RGB main_color = { (byte)0, (byte)0 , (byte)0 };
+	RGB main_color = { (byte)255, (byte)255, (byte)255 };
 	ofstream file;
 	void writeTargaFile(const char* fileName) {
 
 		file.open(fileName, ios::binary | ios::out);
 
-		if (!file.is_open()) throw;
+		if (!file.is_open())
+			throw;
 
 		header[12] = width & 0xFF;
 		header[13] = (width >> 8) & 0xFF; //take value from the last 8 bits, and ignore all the rest bits       
@@ -45,13 +46,10 @@ public:
 
 		file.write((const char*)header, 18);
 
+		
 		init(fileName,width);
-		putPixelIn(20, 20, main_color);
-		//drawPixel(fileName, 20, 100, color, width);  
-		//drawPixel(fileName, 100, 20, color, width); 
-		//drawPixel(fileName, 20, 20, color, width);
-		file.close();
-
+		putPixelIn(5, 5, main_color);
+		test_show();
 	}
 
 };

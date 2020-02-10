@@ -16,10 +16,13 @@ int main(int count, char* argum[]) {
 	cout << "\n--------------------------\n";
 
 	CLIarguments Arguments;
-
-	for (int i = 1; i < count; i++)
-	Arguments.Parse(argum[i]);
-	
+	try {
+		for (int i = 1; i < count; i++)
+			Arguments.Parse(argum[i]);
+	}
+	catch (const char * error) {
+		cout << error << endl;
+	}
 	Arguments.Show();
 
     WriteTGA file(Arguments.GetDoutValue() + 20, Arguments.GetDoutValue() + 20);
