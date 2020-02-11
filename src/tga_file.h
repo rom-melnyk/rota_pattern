@@ -11,12 +11,11 @@
 using namespace std;
 typedef char byte;
 
-class WriteTGA : public Canvas {
-protected:
-	int height;
-	int width;
-public:
-	WriteTGA(int _height, int _width) : height(_height), width(_width) {}
+
+
+class WriteTGA{
+private:
+	int side_length;
 
 	byte header[18] = {
 	   0,                  //0      id
@@ -30,28 +29,36 @@ public:
 	   24,                 //16     Means 24bit RGB
 	   0                   //17     Image descriptor
 	};
-	RGB main_color = { (byte)255, (byte)255, (byte)255 };
-	ofstream file;
-	void writeTargaFile(const char* fileName) {
+
+public:
+
+	void save(const char* fileName, vector<RGB> all_data) {
+		ofstream file;
 
 		file.open(fileName, ios::binary | ios::out);
 
-		if (!file.is_open())
+		if (!file.is_open()) {
 			throw;
+		}
 
-		header[12] = width & 0xFF;
-		header[13] = (width >> 8) & 0xFF; //take value from the last 8 bits, and ignore all the rest bits       
-		header[14] = height & 0xFF;
-		header[15] = (height >> 8) & 0xFF;
+		header[12] = side_length & 0xFF;
+		header[13] = (side_length >> 8) & 0xFF;   //take value from the last 8 bits, and ignore all the rest bits       
+		header[14] = side_length & 0xFF;
+		header[15] = (side_length >> 8) & 0xFF;
 
 		file.write((const char*)header, 18);
 
-		
-		init(fileName,width);
-		putPixelIn(5, 5, main_color);
-		test_show();
+		for (int i = 0; i < all_data.size(); i++) {
+			file.put(all_data.at(i).blue);
+			file.put(all_data.at(i).green);
+			file.put(all_data.at(i).red);
+		}
+
+		file.close();
 	}
 
+	WriteTGA(unsigned int _side_length) : side_length(_side_length){}
+	
 };
 
 

@@ -24,11 +24,27 @@ int main(int count, char* argum[]) {
 		cout << error << endl;
 	}
 	Arguments.Show();
+	int side_length = Arguments.GetDoutValue() + 20;
+	Canvas canvas(side_length);
 
-    WriteTGA file(Arguments.GetDoutValue() + 20, Arguments.GetDoutValue() + 20);
-	file.writeTargaFile("tgafile.tga");
+	RGB main_color = { (byte)0, (byte)0, (byte)0 };
 
-	
+	/*for (int i = 20; i <= 100; i++)
+		canvas.put_pixel_at(i, 20, main_color);
 
+	for (int i = 40; i <= 100; i++)
+		canvas.put_pixel_at(40, i, main_color);
+
+	for (int i = 20; i <= 100; i++)
+		canvas.put_pixel_at(100, i, main_color);
+
+	for (int i = 40; i <= 100; i++)
+		canvas.put_pixel_at(i, 100, main_color);
+		*/
+	vector<RGB> pixels_data = canvas.get_all_pixels();
+
+
+    WriteTGA file(side_length);
+	file.save("tgafile.tga", pixels_data);
   return 0;
 }
