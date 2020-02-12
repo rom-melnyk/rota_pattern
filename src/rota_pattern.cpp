@@ -3,7 +3,7 @@
 #include "cli_arguments.h"
 #include "tga_file.h"
 #include "Canvas.h"
-
+#include "math.h"
 using namespace std;
 
 
@@ -29,22 +29,17 @@ int main(int count, char* argum[]) {
 
 	RGB main_color = { (byte)0, (byte)0, (byte)0 };
 
-	/*for (int i = 20; i <= 100; i++)
-		canvas.put_pixel_at(i, 20, main_color);
+	Math math(side_length);
 
-	for (int i = 40; i <= 100; i++)
-		canvas.put_pixel_at(40, i, main_color);
-
-	for (int i = 20; i <= 100; i++)
-		canvas.put_pixel_at(100, i, main_color);
-
-	for (int i = 40; i <= 100; i++)
-		canvas.put_pixel_at(i, 100, main_color);
-		*/
+	vector<Position> coordinates = math.drawCircle();
+	
+	for (int i = 0; i < coordinates.size(); i++) {
+		canvas.put_pixel_at(coordinates.at(i).x, coordinates.at(i).y, main_color);
+	}
 	vector<RGB> pixels_data = canvas.get_all_pixels();
-
 
     WriteTGA file(side_length);
 	file.save("tgafile.tga", pixels_data);
+
   return 0;
 }
