@@ -32,7 +32,7 @@ private:
 
 public:
 
-	void save(const char* fileName, vector<RGB> all_data) {
+	void save(string fileName, vector<RGB> all_data) {
 		ofstream file;
 
 		file.open(fileName, ios::binary | ios::out);
