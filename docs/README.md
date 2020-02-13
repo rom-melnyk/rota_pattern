@@ -93,12 +93,19 @@ In our example we expect `1024 * 1024 = 1048576` pixels to be put (see the `widt
 
 # The math behind RGB color
 
-TBD
+See [here](https://melnyk.site/post/18).
 
 [To the top](#index)
 
 # Generating the rotation pattern
 
-TBD
+Drawing a circle:
+
+![One circle](./Circle.png)
+
+Designing a trajectory of 2 circles:
+
+![Two circles](./2-circles.png)
+
 
 [To the top](#index)
