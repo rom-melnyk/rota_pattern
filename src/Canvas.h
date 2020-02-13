@@ -15,15 +15,6 @@ struct RGB
 	byte blue;
 };
 
-/*__interface ICanvas
-{
-	//void init(unsigned int side_length); // might be private if you invoke it from constructor
-	//void putPixelIn(unsigned int x1, unsigned int y1, RGB color);
-	//RGB getPixelAt(uint16_t x, uint16_t y);
-	//public ... getAllPixels();
-};
-*/
-
 class Canvas {
 
 private:
@@ -54,8 +45,11 @@ public:
 		}
 		return result;
 	}
-	void put_pixel_at(unsigned int x, unsigned int y, RGB color) {
-		pixel_data[y][x] = color;
+	void put_pixel_at(double x, double y, RGB color) {
+		int _x, _y;
+		_x = round(x);
+		_y = round(y);
+		pixel_data[_y][_x] = color;
 	}
 	RGB get_pixel_at(unsigned short x, unsigned short y) {
 		return pixel_data[y][x];
