@@ -34,7 +34,7 @@ public:
 			pixel_data.push_back(line);
 		}
 	}
-	vector<RGB> get_all_pixels() {
+	vector<RGB> getAllpixels() {
 		vector<RGB> result;
 
 		for (unsigned int y = 0; y < side_length; y++) {
@@ -45,13 +45,13 @@ public:
 		}
 		return result;
 	}
-	void put_pixel_at(double x, double y, RGB color) {
+	void putPixelAt(double x, double y, RGB color) {
 		int _x, _y;
 		_x = round(x);
 		_y = round(y);
 		pixel_data[_y][_x] = color;
 	}
-	RGB get_pixel_at(unsigned short x, unsigned short y) {
+	RGB getPixelAt(unsigned short x, unsigned short y) {
 		return pixel_data[y][x];
 	}
 

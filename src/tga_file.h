@@ -6,12 +6,10 @@
 #include<iostream>
 #include<vector>
 #include<fstream>
-#include "Canvas.h"
+#include "canvas.h"
 
 using namespace std;
 typedef char byte;
-
-
 
 class WriteTGA{
 private:
@@ -21,7 +19,7 @@ private:
 	   0,                  //0      id
 	   0,                  //1      Color map type
 	   2,                  //2      24bit uncompressed RGB
-	   0, 0, 0, 0, 0, 	    //3-7    Color map related data
+	   0, 0, 0, 0, 0, 	   //3-7    Color map related data
 	   0, 0,               //8-9    X origin
 	   0, 0,               //10-11  Y origin
 	   0, 0,               //12-13  Width
@@ -32,10 +30,10 @@ private:
 
 public:
 
-	void save(string fileName, vector<RGB> all_data) {
+	void save(string file_name, vector<RGB> all_data) {
 		ofstream file;
 
-		file.open(fileName, ios::binary | ios::out);
+		file.open(file_name, ios::binary | ios::out);
 
 		if (!file.is_open()) {
 			throw;

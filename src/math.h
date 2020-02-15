@@ -34,7 +34,6 @@ private:
 			return angle;
 		}
 	}
-
 	bool isAroundInitialPosition(double angle) {
 		double treshhold = 0.001;
 		return (PI * 2 - angle < treshhold || angle < treshhold);
@@ -54,11 +53,11 @@ public:
 
 	vector<Position> drawCircle() {
 		vector<Position> coordinates;
-		double bigCircleAngleStep = PI / 360;
+		double bigCircleAngleStep = PI / 720;
 		do {
 			double bigDx = sin(big.angle) * big.R;
 			double bigDy = cos(big.angle) * big.R;
-			//coordinates.push_back({ bigDx + big.center.x, bigDy + big.center.y });
+			//coordinates.push_back({ bigDx + big.center.x, bigDy + big.center.y });  // --> Draw big circle
 
 			int trajectR = big.R - small.R;
 			double trajectDx = sin(big.angle) * trajectR;

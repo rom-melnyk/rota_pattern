@@ -2,8 +2,10 @@
 #define __CLI_ARGUMENTS_H_INCLUDED__
 
 #include<iostream>
+#include<string>
 
 using namespace std;
+
 class CLIarguments {
 
 	int dout;
@@ -12,13 +14,13 @@ class CLIarguments {
 
 public:
 
-	void SetDoutValue(int dout) { this->dout = dout; }
-	void SetDinValue(int din) { this->din = din; }
-	void SetPenValue(int pen) { this->pen = pen; }
+	void setDoutValue(int dout) { this->dout = dout; }
+	void setDinValue(int din) { this->din = din; }
+	void setPenValue(int pen) { this->pen = pen; }
 
-	int GetDoutValue() { return this->dout; }
-	int GetDinValue() { return this->din; }
-	int GetPenValue() { return this->pen; }
+	int getDoutValue() { return this->dout; }
+	int getDinValue() { return this->din; }
+	//int GetPenValue() { return this->pen; }
 
 	CLIarguments() :dout(0), din(0), pen(0) {}
 
@@ -36,19 +38,19 @@ public:
 			}
 		}
 		if (left_side == "--dout" || left_side == "dout")
-			SetDoutValue(atoi(right_side.c_str()));
+			setDoutValue(atoi(right_side.c_str()));
 		else if (left_side == "--din" || left_side == "din")
-			SetDinValue(atoi(right_side.c_str()));
+			setDinValue(atoi(right_side.c_str()));
 		else if (left_side == "--pen" || left_side == "pen")
-			SetPenValue(atoi(right_side.c_str()));
+			setPenValue(atoi(right_side.c_str()));
 		else
 			throw "uncorrect data input";
 	}
-	void Show() {
-		cout << "Dout: " << GetDoutValue() << endl;
+	/*void Show() {
+		cout << "Dout: " << GetDoutValue() << endl; //use for debug purposes
 		cout << "Din: " << GetDinValue() << endl;
 		cout << "Pen: " << GetPenValue() << endl;
-	}
+	}*/ 
 
 };
 
